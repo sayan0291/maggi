@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reimagining Maggi's Universe - Instant Noodles Redefined</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            overflow-x: hidden;
+        }
+
+        .hero-bg {
+            background: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/907a6583-7c31-494a-a5dc-ea31a8cf39d5.png') center/cover;
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            animation: slideIn 1s ease-out;
+        }
+
+        .checked{
+            color: #FFED00;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bounce-in {
+            animation: bounce 1s ease-out;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            53%,
+            80%,
+            100% {
+                transform: translate3d(0, 0, 0);
+            }
+
+            40%,
+            43% {
+                transform: translate3d(0, -30px, 0);
+            }
+
+            70% {
+                transform: translate3d(0, -15px, 0);
+            }
+
+            90% {
+                transform: translate3d(0, -4px, 0);
+            }
+        }
+
+        .hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-effect:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="text-gray-900">
+    <!-- Header -->
+    <header class="bg-orange-500 text-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center p-4">
+            <h1 class="text-3xl font-bold bounce-in">Maggi</h1>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#hero" class="hover:text-yellow-200 transition-colors duration-300">Home</a></li>
+                <li><a href="#products" class="hover:text-yellow-200 transition-colors duration-300">Products</a></li>
+                <li><a href="#about" class="hover:text-yellow-200 transition-colors duration-300">Recipes</a></li>
+                <li><a href="#contact" class="hover:text-yellow-200 transition-colors duration-300">Contact</a></li>
+            </ul>
+            <button class="md:hidden" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+        </nav>
+        <ul id="mobile-menu" class="md:hidden flex-col space-y-2 p-4 hidden bg-orange-600">
+            <li><a href="#hero" class="block hover:text-yellow-200 transition-colors duration-300">Home</a></li>
+            <li><a href="#products" class="block hover:text-yellow-200 transition-colors duration-300">Products</a></li>
+            <li><a href="#about" class="block hover:text-yellow-200 transition-colors duration-300">Recipes</a></li>
+            <li><a href="#contact" class="block hover:text-yellow-200 transition-colors duration-300">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero"
+        class="hero-bg relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+        <div class="p-8 bg-black bg-opacity-60 rounded-xl mx-4 max-w-4xl bounce-in">
+            <h2 class="text-6xl font-bold mb-4 gradient-text">MAGGI Magic In Minutes</h2>
+            <p class="text-xl mb-6 leading-relaxed">Make your everyday dishes extraordinary</p>
+            <img src="https://www.maggi.in/sites/default/files/Nutrition-4.jpg"
+                alt="Dynamic close-up of curling Maggi noodles in a rustic orange bowl, surrounded by wispy steam clouds and sparkling flavor highlights, evoking warmth and culinary excitement in a cozy kitchen ambiance with soft natural light and contemporary elements"
+                class="w-full max-w-lg mx-auto mb-6 rounded-lg shadow-2xl floating" />
+            <div class="flex justify-center space-x-4">
+                <button onclick="scrollToSection('products')"
+                    class="bg-orange-500 text-black py-3 px-8 rounded-full text-lg font-semibold hover:bg-orange-400 transition-all duration-300 hover:scale-105 shadow-lg">Explore
+                    Flavors</button>
+                <button
+                    class="border-2 border-white text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 hover:scale-105">Watch
+                    Recipe</button>
+            </div>
+        </div>
+        <div class="absolute top-10 right-10 hidden lg:block">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2f3328e4-0c2a-4025-8d22-94c46eb92890.png"
+                alt="Animated cartoon noodle twirling around a golden fork, symbolizing quick meal preparation with playful spirals and bright orange accents in a flat illustration style"
+                class="w-32 h-32 opacity-80 hover:opacity-100 transition-opacity duration-500 floating" />
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="products" class="py-20 bg-gradient-to-b from-orange-100 to-yellow-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-5xl font-bold text-center mb-12 gradient-text">Noodles</h2>
+            <p class="text-center text-lg mb-16 max-w-3xl mx-auto text-gray-700">Discover delicious avtars of your favourite Noodle brand!</p>
+            <div class="product-grid max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
+                    onclick="showProductModal(0)">
+                    <img src="https://www.maggi.in/sites/default/files/styles/product_image_desktop_617_900/public/maggi-2minutes-noodles-617x900.png"
+                        alt="Grains of Maggi masala noodles spilling from an open pack, showcasing golden-yellow noodles with spice-infused seasoning and fresh herb garnishes, capturing the essence of traditional Indian flavors in a rustic bowl setting"
+                        class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI® </br>2-Minute Noodles</h3>
+                    <h2>star rating</h2>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
+                    onclick="showProductModal(1)">
+                    <img src="https://www.maggi.in/sites/default/files/styles/product_image_desktop_617_900/public/maggi-special-masala-spicy-yummy.png?itok=Q-KO0mlE"
+                        alt="Lush green capsicum peppers mixed with melted cheese chunks over cooked Maggi noodles, creating a vibrant and appetizing dish with rich, gooey textures and fresh vegetable highlights"
+                        class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI®</br>Special Masala Noodles</h3>
+                    <h2>star rating</h2>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
+                    onclick="showProductModal(2)">
+                    <img src="https://www.maggi.in/sites/default/files/styles/product_image_desktop_617_900/public/maggi-masala-veg-617x900.png?itok=9C9_WtnC"
+                        alt="Juicy chicken pieces garnished with red chili flakes and stir-fried vegetables in a dynamic Maggi noodle base, emitting steam and showcasing bold, fiery seasonings in an energetic kitchen scene"
+                        class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI® </br>Veggie Masala Noodles</h3>
+                    <h2>star rating</h2>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
+                    onclick="showProductModal(3)">
+                    <img src="https://www.maggi.in/sites/default/files/styles/product_image_desktop_617_900/public/2024-05/Maggi%20Chicken%20BP_RC_Single%20Pack_44312675_FOP.png?itok=NUgUyf5U"
+                        alt="Aromatic Thai curry paste with coconut milk swirling around Maggi noodles topped with fresh cilantro and lime wedges, offering a creamy, fragrant vegan delight with colorful tropical elements"
+                        class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI®</br> Chicken Noodles</h3>
+                    <h2>star rating</h2>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
+                    onclick="showProductModal(3)">
+                    <img src="https://www.maggi.in/sites/default/files/styles/product_image_desktop_617_900/public/maggi-without-onion-and-gralic.png?itok=ixAhGcmo"
+                        alt="Aromatic Thai curry paste with coconut milk swirling around Maggi noodles topped with fresh cilantro and lime wedges, offering a creamy, fragrant vegan delight with colorful tropical elements"
+                        class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI®</br>2-Minute Noodles - No Onion No Garlic
+                    </h3>
+                    <h2>star rating</h2>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
+                    onclick="showProductModal(3)">
+                    <img src="https://www.maggi.in/sites/default/files/styles/product_image_desktop_617_900/public/maggi-masala-veg-aata-noodles.png?itok=KwIijnHn"
+                        alt="Aromatic Thai curry paste with coconut milk swirling around Maggi noodles topped with fresh cilantro and lime wedges, offering a creamy, fragrant vegan delight with colorful tropical elements"
+                        class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI® </br>Nutri-licious® Atta Masala Noodles
+                    </h3>
+                    <h2>star rating</h2>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
+                    onclick="showProductModal(3)">
+                    <img src="https://www.maggi.in/sites/default/files/styles/product_image_desktop_617_900/public/maggi-masala-oats.png?itok=szn7Fdrg"
+                        alt="Aromatic Thai curry paste with coconut milk swirling around Maggi noodles topped with fresh cilantro and lime wedges, offering a creamy, fragrant vegan delight with colorful tropical elements"
+                        class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI® </br>Nutri-licious® Oats Masala Noodles
+                    </h3>
+                    <h2>star rating</h2>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
+                    onclick="showProductModal(3)">
+                    <img src="https://www.maggi.in/sites/default/files/styles/product_image_desktop_617_900/public/2024-08/korean_bbq_fop_veg2-pdp.jpg?itok=wog1VsTQ"
+                        alt="Aromatic Thai curry paste with coconut milk swirling around Maggi noodles topped with fresh cilantro and lime wedges, offering a creamy, fragrant vegan delight with colorful tropical elements"
+                        class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI Korean BBQ Veg Noodles</h3>
+                    <h2>star rating</h2>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
+                    onclick="showProductModal(3)">
+                    <img src="https://www.maggi.in/sites/default/files/styles/product_image_desktop_617_900/public/2024-08/korean_bbq_fop_non-veg1-pdp.jpg?itok=HypAu5p2"
+                        alt="Aromatic Thai curry paste with coconut milk swirling around Maggi noodles topped with fresh cilantro and lime wedges, offering a creamy, fragrant vegan delight with colorful tropical elements"
+                        class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI Korean BBQ Chicken Noodles</h3>
+                    <h2>star rating</h2>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
+                    onclick="showProductModal(3)">
+                    <img src="https://www.maggi.in/sites/default/files/styles/product_image_desktop_617_900/public/Cuppa-Noodles-617x900-%28Masala-cuppa-noodles%29.png?itok=HPMOKXYU"
+                        alt="Aromatic Thai curry paste with coconut milk swirling around Maggi noodles topped with fresh cilantro and lime wedges, offering a creamy, fragrant vegan delight with colorful tropical elements"
+                        class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI® Masala Cuppa</h3>
+                    <h2>star rating</h2>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
+                    onclick="showProductModal(3)">
+                    <img src="https://www.maggi.in/sites/default/files/styles/product_image_desktop_617_900/public/Cuppa-Noodles-617x900-%28Chicken-cuppa-noodles%29.png?itok=IEBtb6Y1"
+                        alt="Aromatic Thai curry paste with coconut milk swirling around Maggi noodles topped with fresh cilantro and lime wedges, offering a creamy, fragrant vegan delight with colorful tropical elements"
+                        class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI® Chicken Cuppa</h3>
+                    <h2>star rating</h2>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
+                    onclick="showProductModal(3)">
+                    <img src="https://www.maggi.in/sites/default/files/styles/product_image_desktop_617_900/public/Cuppa-Noodles-617x900-%28Chilly-Chow-Noodles%29.png?itok=QO4akZUt"
+                        alt="Aromatic Thai curry paste with coconut milk swirling around Maggi noodles topped with fresh cilantro and lime wedges, offering a creamy, fragrant vegan delight with colorful tropical elements"
+                        class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI® Chilly Chow Cuppa</h3>
+                    <h2>star rating</h2>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About/Recipes Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8 gradient-text">Craft Your Own Culinary Tale</h2>
+            <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-12">Unleash creativity in the kitchen with Maggi – from
+                simple twists to gourmet recreations. Share your story and inspire the world.</p>
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/31e452ce-1ede-4583-a163-643e4611f4f2.png"
+                alt="Enthusiastic chef in a bright, modern kitchen energetically seasoning Maggi noodles with various colorful spices and fresh vegetables, surrounded by recipe books and cooking utensils in a vibrant, inspiring setup"
+                class="w-full max-w-4xl mx-auto rounded-lg shadow-lg mb-8" />
+            <button
+                class="bg-orange-500 text-white py-4 px-8 rounded-full text-xl font-semibold hover:bg-orange-400 transition-all duration-300 hover:scale-105">Share
+                Your Recipe</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-yellow-100 to-orange-100">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Let's Cook Up Something Amazing</h2>
+        <div class="container mx-auto px-4 max-w-md">
+            <form class="bg-white p-8 rounded-xl shadow-2xl">
+                <input type="text" placeholder="Your Name"
+                    class="w-full p-4 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition duration-300"
+                    required>
+                <input type="email" placeholder="Your Email"
+                    class="w-full p-4 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition duration-300"
+                    required>
+                <textarea placeholder="Share Your Maggi Story" rows="5"
+                    class="w-full p-4 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition duration-300"
+                    required></textarea>
+                <button type="submit"
+                    class="w-full bg-orange-500 text-white py-4 px-6 rounded-lg text-xl font-semibold hover:bg-orange-400 transition-all duration-300 hover:scale-105">Send
+                    Flavor</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-orange-600 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg">© 2023 Maggi's Reimagined Universe. All recipes reserved. Powered by passion and noodles.
+            </p>
+            <div class="mt-4 space-x-6">
+                <a href="#" class="hover:text-yellow-200 transition-colors duration-300">Instagram</a>
+                <a href="#" class="hover:text-yellow-200 transition-colors duration-300">Facebook</a>
+                <a href="#" class="hover:text-yellow-200 transition-colors duration-300">Recipes</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50"
+        onclick="closeModal()">
+        <div class="bg-white p-8 rounded-2xl max-w-lg w-full mx-4 relative" onclick="event.stopPropagation()">
+            <button onclick="closeModal()"
+                class="absolute top-4 right-4 text-3xl text-gray-500 hover:text-gray-700">&times;</button>
+            <img id="modal-image" src="" alt="" class="w-full h-48 object-cover rounded-lg mb-4" />
+            <h3 id="modal-title" class="text-2xl font-bold mb-4"></h3>
+            <p id="modal-desc" class="text-gray-700 mb-6"></p>
+            <span id="modal-price" class="text-3xl font-bold text-orange-600"></span>
+            <button
+                class="mt-6 bg-orange-500 text-white py-2 px-6 rounded-lg hover:bg-orange-400 transition-all duration-300">Add
+                to Cart</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        const products = [
+            { title: 'Classic Masala', image: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f739e2e8-432f-41b4-a381-95b70b0177fb.png', alt: 'Detailed view of Maggi masala noodles in an open pack with spilled grains, highlighting the golden-yellow noodles, spice-infused seasoning packets, and fresh herb garnishes in a close-up, appetizing presentation', desc: 'Timeless spices for that nostalgic comfort. Cook in 2 minutes!', price: '$2.49' },
+            { title: 'Cheesy Capsicum', image: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f564b68d-6f45-43ba-9f31-fc5c13ccd03c.png', alt: 'Vibrant bowl of cheesy capsicum Maggi noodles with melted cheese chunks, crisp green capsicum, and cheese strings in a warm, gooey dish style with fresh vegetable accents', desc: 'Cheesy delight with crunchy capsicum. A veggie lover\'s dream!', price: '$3.99' },
+            { title: 'Spicy Chicken', image: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0bedb7cd-1375-4e67-aea4-0a08527246cd.png', alt: 'Fiery red bowl of spicy chicken Maggi noodles with juicy chicken pieces, chili flakes, and stir-fried veggies, steaming hot in a bold, energy-filled kitchen setting with dynamic lighting', desc: 'Heat up your meal with tender chicken and bold spices. Dare to try!', price: '$4.49' },
+            { title: 'Vegan Thai Curry', image: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9a090c1e-51d7-447c-bb8d-562a700f3700.png', alt: 'Creamy aromatic Thai curry Maggi noodles with coconut milk swirls, cilantro, and lime in a vibrant, tropical vegan bowl with fresh herb accents and colorful elements', desc: 'Plant-based paradise with exotic flavors. Sustainable and scrumptious!', price: '$3.79' }
+        ];
+
+        function showProductModal(index) {
+            const product = products[index];
+            document.getElementById('modal-image').src = product.image;
+            document.getElementById('modal-image').alt = product.alt;
+            document.getElementById('modal-title').textContent = product.title;
+            document.getElementById('modal-desc').textContent = product.desc;
+            document.getElementById('modal-price').textContent = product.price;
+            document.getElementById('product-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('product-modal').classList.add('hidden');
+        }
+
+        // Animate elements on scroll
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('bounce-in');
+                }
+            });
+        });
+        document.querySelectorAll('.hover-effect').forEach(el => observer.observe(el));
+
+        // Parallax-like effect for hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero-bg');
+            hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+        });
+    </script>
+</body>
+
+</html>
+</content>
+</create_file>
