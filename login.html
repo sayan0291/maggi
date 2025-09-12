@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login For Noddles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <style>
+        .signup-model{
+            display: flex;
+            width: 100%;
+            height:100%;
+            border-radius: 2rem;
+            background: white;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .signup-model-content{
+            margin-top: 2rem;
+            background: #ff6b35;
+            padding: 2rem;
+            border-radius: 1rem;
+            max-width: 350px;
+            width: 100%;
+            position: relative;
+        }
+
+        .signup-model-content form{
+            align-items: center;
+            width: 100%;
+        }
+
+        .signup-model-content h2{
+            margin-bottom: 1rem;
+            color: #f7edd6;
+        }
+        .signup-model-content input{
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            margin: 0.5rem;
+            width: 90%;
+        }
+
+        .signup-model-content button{
+            padding: 0.75rem;
+            background: #ff6b35;
+            width: 60%;
+            color: #fff;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .signup-model-content button:hover{
+            background: #f7931e;
+        }
+
+        .form{
+            display: none;
+            flex-direction: column;
+        }
+
+        .form.active{
+            display: flex;
+        }
+
+        p{
+             font-size: 0.7rem;
+             color: black;
+        }
+
+        a{
+            margin-left: 3px;
+            font-size: 0.9rem;
+            color: blue !important;
+        }
+
+
+
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-effect:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- SignUP Model -->
+    <div class="signup-model">
+        <div class="signup-model-content floating">
+            <form id="register-form" class="form active">
+            <h2>SignUP</h2>
+            <input id="email" type="email" placeholder="Email" required>
+            <input id="password" type="password" placeholder="Password" required>
+            <input id="confirm-password" type="password" placeholder="Confirm Password" required>
+            <button class="create bounce-in" type="submit">Create Account</button>
+            <p>Already have an account?<a href="#" id="showlogin">Sign In</a></p>
+            </form>
+            
+            <form id="login-form" class="form">
+                <h2>Log In</h2>
+            <input id="email" type="email" placeholder="Email" required>
+            <input id="password" type="password" placeholder="Password" required>
+            <button class="create bounce-in" type="submit">Log IN</button>
+            <p>Already have an account?<a href="#" id="showsignin">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+    <script>
+        const emailinput = document.querySelector('#email');
+        const password = document.querySelector('#password');
+        const confirmpassword = document.querySelector('#confirm-password');
+        const createaccount = document.querySelector('.create')
+        const registerform = document.querySelector('#register-form')
+        const loginform = document.querySelector('#login-form')
+        const showsignin = document.querySelector('#showsignin')
+        const showlogin = document.querySelector('#showlogin')
+
+        showlogin.addEventListener('click', function (show){
+            registerform.classList.remove('active');
+            loginform.classList.add('active');
+        })
+
+        showsignin.addEventListener('click', function (show){
+            loginform.classList.remove('active');
+            registerform.classList.add('active');
+        })
+
+        createaccount.addEventListener('click', function (validemail){
+            const passwordvalue = password.value;
+            const confirmpasswordvalue = confirmpassword.value;
+
+            if(!emailinput.checkValidity()){
+                validemail.preventDefault();
+                alert("Enter a Valid Email !!");
+                
+            }
+            else if(passwordvalue !== confirmpasswordvalue){
+                validemail.preventDefault();
+                alert("Password Does Not Match");
+            }
+            else{
+                validemail.preventDefault();
+                window.location.replace("maggi.html");
+            }
+        } )
+    </script>
+</body>
+</html>

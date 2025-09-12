@@ -56,65 +56,6 @@
             color: orange;
         }
 
-        .fa-user{
-            color: rgb(247, 190, 121);
-        }
-
-        .signup-model{
-            display: block;
-            width: 100vw;
-            height:100vw;
-            border-radius: 2rem;
-            background: white;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .signup-model-content{
-            background: #ff6b35;
-            padding: 2rem;
-            border-radius: 1rem;
-            max-width: 350px;
-            width: 90%;
-            position: relative;
-        }
-
-        .signup-close{
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            font-size: 3rem;
-            color: #888;
-            cursor: pointer;
-        }
-
-        .signup-model-content h2{
-            margin-bottom: 1rem;
-            color: #ff6b35;
-        }
-        .signup-model-content input{
-            padding: 0.75rem;
-            border: 1px solid #ccc;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            margin: 0.5rem;
-        }
-
-        .signup-model-content button{
-            padding: 0.75rem;
-            background: #ff6b35;
-            color: #fff;
-            border: none;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .signup-model-content button:hover{
-            background: #f7931e;
-        }
-
         @keyframes slideIn {
             from {
                 opacity: 0;
@@ -200,7 +141,7 @@
                 <li><a href="#products" class="hover:text-yellow-200 transition-colors duration-300">Products</a></li>
                 <li><a href="#about" class="hover:text-yellow-200 transition-colors duration-300">Recipes</a></li>
                 <li><a href="#contact" class="hover:text-yellow-200 transition-colors duration-300">Contact</a></li>
-                <li><a href="#profile" class="hover:text-yellow-200 transition-colors duration-300"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="/login.html" class="hover:text-yellow-200 transition-colors duration-300"><i class="fa-solid fa-user"></i></a></li>
                 <li><i class="hover:text-yellow-200 transition-colors duration-300 fa-solid fa-cart-shopping"></i></li>
             </ul>
             <button class="md:hidden" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
@@ -210,7 +151,7 @@
             <li><a href="#products" class="block hover:text-yellow-200 transition-colors duration-300">Products</a></li>
             <li><a href="#about" class="block hover:text-yellow-200 transition-colors duration-300">Recipes</a></li>
             <li><a href="#contact" class="block hover:text-yellow-200 transition-colors duration-300">Contact</a></li>
-            <li><a href="#profile" class="hover:text-yellow-200 transition-colors duration-300"><i class="fa-solid fa-user"></i></a></li>
+            <li><a href="/login.html" class="hover:text-yellow-200 transition-colors duration-300"><i class="fa-solid fa-user"></i></a></li>
             <li><i class="hover:text-yellow-200 transition-colors duration-300 fa-solid fa-cart-shopping"></i></li>
         </ul>
     </header>
@@ -486,19 +427,6 @@
         </div>
     </div>
 
-    <!-- SignUP Model -->
-    <div class="signup-model flex relative">
-        <div class="signup-model-content floating ">
-            <span class="signup-close hover-effect">&times;</span>
-            <h2>Sign Up</h2>
-            <form>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
-            <input type="password" placeholder="Confirm Password" required>
-            <button type="submit">Create Account</button>
-            </form>
-        </div>
-    </div>
 
     <script>
         function toggleMenu() {
