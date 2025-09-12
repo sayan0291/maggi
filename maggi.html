@@ -7,8 +7,7 @@
     <title>Reimagining Maggi's Universe - Instant Noodles Redefined</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <style>
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
@@ -18,6 +17,11 @@
         .hero-bg {
             background: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/907a6583-7c31-494a-a5dc-ea31a8cf39d5.png') center/cover;
             animation: fadeIn 2s ease-in;
+        }
+
+        img{
+            height: 10%;
+            width: 10%;
         }
 
         @keyframes fadeIn {
@@ -39,17 +43,28 @@
             animation: slideIn 1s ease-out;
         }
 
+        .ratings{
+            margin: 1rem;
+            font-size: 1.5rem;
+        }
+
         .checked{
-            color: #FFED00;
+            color: orange;
+        }
+
+        .fa-star{
+            color: orange;
+        }
+
+        .fa-user{
+            color: rgb(247, 190, 121);
         }
 
         .signup-model{
             display: block;
-            z-index: 1000;
-            left: 0;
-            top: 0;
             width: 100vw;
             height:100vw;
+            border-radius: 2rem;
             background: white;
             justify-content: center;
             align-items: center;
@@ -61,15 +76,14 @@
             border-radius: 1rem;
             max-width: 350px;
             width: 90%;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
             position: relative;
         }
 
         .signup-close{
             position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 2rem;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 3rem;
             color: #888;
             cursor: pointer;
         }
@@ -77,7 +91,6 @@
         .signup-model-content h2{
             margin-bottom: 1rem;
             color: #ff6b35;
-            text-align: center;
         }
         .signup-model-content input{
             padding: 0.75rem;
@@ -181,13 +194,13 @@
     <!-- Header -->
     <header class="bg-orange-500 text-white shadow-lg sticky top-0 z-50">
         <nav class="container mx-auto flex justify-between items-center p-4">
-            <h1 class="text-3xl font-bold bounce-in">Maggi</h1>
+            <h1 class="text-3xl font-bold bounce-in"><img src="/images/maggi-logo-png-transparent.png"></h1>
             <ul class="hidden md:flex space-x-6">
                 <li><a href="#hero" class="hover:text-yellow-200 transition-colors duration-300">Home</a></li>
                 <li><a href="#products" class="hover:text-yellow-200 transition-colors duration-300">Products</a></li>
                 <li><a href="#about" class="hover:text-yellow-200 transition-colors duration-300">Recipes</a></li>
                 <li><a href="#contact" class="hover:text-yellow-200 transition-colors duration-300">Contact</a></li>
-                <li><a href="#profile" class="hover:text-yellow-200 transition-colors duration-300">Profile</a></li>
+                <li><a href="#profile" class="hover:text-yellow-200 transition-colors duration-300"><i class="fa-solid fa-user"></i></a></li>
                 <li><i class="hover:text-yellow-200 transition-colors duration-300 fa-solid fa-cart-shopping"></i></li>
             </ul>
             <button class="md:hidden" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
@@ -197,7 +210,7 @@
             <li><a href="#products" class="block hover:text-yellow-200 transition-colors duration-300">Products</a></li>
             <li><a href="#about" class="block hover:text-yellow-200 transition-colors duration-300">Recipes</a></li>
             <li><a href="#contact" class="block hover:text-yellow-200 transition-colors duration-300">Contact</a></li>
-            <li><a href="#profile" class="hover:text-yellow-200 transition-colors duration-300">Profile</a></li>
+            <li><a href="#profile" class="hover:text-yellow-200 transition-colors duration-300"><i class="fa-solid fa-user"></i></a></li>
             <li><i class="hover:text-yellow-200 transition-colors duration-300 fa-solid fa-cart-shopping"></i></li>
         </ul>
     </header>
@@ -239,12 +252,13 @@
                         alt="Grains of Maggi masala noodles spilling from an open pack, showcasing golden-yellow noodles with spice-infused seasoning and fresh herb garnishes, capturing the essence of traditional Indian flavors in a rustic bowl setting"
                         class="w-full h-48 object-cover rounded-lg mb-4" />
                     <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI® </br>2-Minute Noodles</h3>
-                    <h2>star rating</h2>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
+                    <div class="ratings">
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
                     onclick="showProductModal(1)">
@@ -252,12 +266,13 @@
                         alt="Lush green capsicum peppers mixed with melted cheese chunks over cooked Maggi noodles, creating a vibrant and appetizing dish with rich, gooey textures and fresh vegetable highlights"
                         class="w-full h-48 object-cover rounded-lg mb-4" />
                     <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI®</br>Special Masala Noodles</h3>
-                    <h2>star rating</h2>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
+                    <div class="ratings">
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
                     onclick="showProductModal(2)">
@@ -265,12 +280,13 @@
                         alt="Juicy chicken pieces garnished with red chili flakes and stir-fried vegetables in a dynamic Maggi noodle base, emitting steam and showcasing bold, fiery seasonings in an energetic kitchen scene"
                         class="w-full h-48 object-cover rounded-lg mb-4" />
                     <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI® </br>Veggie Masala Noodles</h3>
-                    <h2>star rating</h2>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
+                   <div class="ratings">
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
                     onclick="showProductModal(3)">
@@ -278,12 +294,13 @@
                         alt="Aromatic Thai curry paste with coconut milk swirling around Maggi noodles topped with fresh cilantro and lime wedges, offering a creamy, fragrant vegan delight with colorful tropical elements"
                         class="w-full h-48 object-cover rounded-lg mb-4" />
                     <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI®</br> Chicken Noodles</h3>
-                    <h2>star rating</h2>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
+                    <div class="ratings">
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                    </div>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
                     onclick="showProductModal(3)">
@@ -292,12 +309,13 @@
                         class="w-full h-48 object-cover rounded-lg mb-4" />
                     <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI®</br>2-Minute Noodles - No Onion No Garlic
                     </h3>
-                    <h2>star rating</h2>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
+                    <div class="ratings">
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
                     onclick="showProductModal(3)">
@@ -306,12 +324,13 @@
                         class="w-full h-48 object-cover rounded-lg mb-4" />
                     <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI® </br>Nutri-licious® Atta Masala Noodles
                     </h3>
-                    <h2>star rating</h2>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
+                    <div class="ratings">
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                    </div>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
                     onclick="showProductModal(3)">
@@ -320,12 +339,13 @@
                         class="w-full h-48 object-cover rounded-lg mb-4" />
                     <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI® </br>Nutri-licious® Oats Masala Noodles
                     </h3>
-                    <h2>star rating</h2>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
+                    <div class="ratings">
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
                     onclick="showProductModal(3)">
@@ -333,12 +353,13 @@
                         alt="Aromatic Thai curry paste with coconut milk swirling around Maggi noodles topped with fresh cilantro and lime wedges, offering a creamy, fragrant vegan delight with colorful tropical elements"
                         class="w-full h-48 object-cover rounded-lg mb-4" />
                     <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI Korean BBQ Veg Noodles</h3>
-                    <h2>star rating</h2>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
+                    <div class="ratings">
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
                     onclick="showProductModal(3)">
@@ -346,12 +367,13 @@
                         alt="Aromatic Thai curry paste with coconut milk swirling around Maggi noodles topped with fresh cilantro and lime wedges, offering a creamy, fragrant vegan delight with colorful tropical elements"
                         class="w-full h-48 object-cover rounded-lg mb-4" />
                     <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI Korean BBQ Chicken Noodles</h3>
-                    <h2>star rating</h2>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
+                    <div class="ratings">
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                    </div>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
                     onclick="showProductModal(3)">
@@ -359,12 +381,13 @@
                         alt="Aromatic Thai curry paste with coconut milk swirling around Maggi noodles topped with fresh cilantro and lime wedges, offering a creamy, fragrant vegan delight with colorful tropical elements"
                         class="w-full h-48 object-cover rounded-lg mb-4" />
                     <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI® Masala Cuppa</h3>
-                    <h2>star rating</h2>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
+                    <div class="ratings">
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
                     onclick="showProductModal(3)">
@@ -372,12 +395,13 @@
                         alt="Aromatic Thai curry paste with coconut milk swirling around Maggi noodles topped with fresh cilantro and lime wedges, offering a creamy, fragrant vegan delight with colorful tropical elements"
                         class="w-full h-48 object-cover rounded-lg mb-4" />
                     <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI® Chicken Cuppa</h3>
-                    <h2>star rating</h2>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
+                    <div class="ratings">
+                        <i class="fa-solid fa-star checked "></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
                     onclick="showProductModal(3)">
@@ -385,12 +409,13 @@
                         alt="Aromatic Thai curry paste with coconut milk swirling around Maggi noodles topped with fresh cilantro and lime wedges, offering a creamy, fragrant vegan delight with colorful tropical elements"
                         class="w-full h-48 object-cover rounded-lg mb-4" />
                     <h3 class="text-2xl font-bold mb-2 text-orange-800">MAGGI® Chilly Chow Cuppa</h3>
-                    <h2>star rating</h2>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
+                    <div class="ratings">
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
                 </div>
             </div>
         </div>
