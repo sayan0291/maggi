@@ -43,6 +43,65 @@
             color: #FFED00;
         }
 
+        .signup-model{
+            display: block;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height:100vw;
+            background: white;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .signup-model-content{
+            background: #ff6b35;
+            padding: 2rem;
+            border-radius: 1rem;
+            max-width: 350px;
+            width: 90%;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .signup-close{
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            color: #888;
+            cursor: pointer;
+        }
+
+        .signup-model-content h2{
+            margin-bottom: 1rem;
+            color: #ff6b35;
+            text-align: center;
+        }
+        .signup-model-content input{
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            margin: 0.5rem;
+        }
+
+        .signup-model-content button{
+            padding: 0.75rem;
+            background: #ff6b35;
+            color: #fff;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .signup-model-content button:hover{
+            background: #f7931e;
+        }
+
         @keyframes slideIn {
             from {
                 opacity: 0;
@@ -237,7 +296,7 @@
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover-effect cursor-pointer"
@@ -399,6 +458,20 @@
             <button
                 class="mt-6 bg-orange-500 text-white py-2 px-6 rounded-lg hover:bg-orange-400 transition-all duration-300">Add
                 to Cart</button>
+        </div>
+    </div>
+
+    <!-- SignUP Model -->
+    <div class="signup-model flex relative">
+        <div class="signup-model-content floating ">
+            <span class="signup-close hover-effect">&times;</span>
+            <h2>Sign Up</h2>
+            <form>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+            <button type="submit">Create Account</button>
+            </form>
         </div>
     </div>
 
