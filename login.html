@@ -140,6 +140,7 @@
         </div>
     </div>
     <script>
+        
         const emailinput = document.querySelector('#email');
         const password = document.querySelector('#password');
         const confirmpassword = document.querySelector('#confirm-password');
@@ -165,12 +166,9 @@
 
             if(!emailinput.checkValidity()){
                 validemail.preventDefault();
-                alert("Enter a Valid Email !!");
-                
             }
             else if(passwordvalue !== confirmpasswordvalue){
                 validemail.preventDefault();
-                alert("Password Does Not Match");
             }
             else{
                 validemail.preventDefault();
