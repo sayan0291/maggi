@@ -114,8 +114,10 @@ start maggi.html  # Windows
 
 ```
 project/
+├── images              
 ├── maggi.html          # Main HTML file with embedded CSS and JavaScript
-└── README.md          # Project documentation
+├── README.md          # Project documentation
+└── login.html          # login page with embedded CSS and Javascript
 ```
 
 ## 🌐 External Resources
